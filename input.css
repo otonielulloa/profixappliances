@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  
+  --color-brand-navy: #163359;
+  --color-brand-sky: #1C95C8;
+  --color-brand-orange: #F26E22;
+}
+
+@source "**/*.html";
