@@ -1,10 +1,10 @@
 # 1. Usar una imagen ligera de Nginx
 FROM nginx:alpine
 
-# 2. Copiar los archivos de tu página (cambia "dist" o "public" por tu carpeta de salida, o usa "." si están en la raíz)
+# Copia todos los archivos de tu web al servidor web
 COPY . /usr/share/nginx/html
 
-# 3. Inyectar la configuración de caché en Nginx
+# Configura Nginx para activar la caché de imágenes por 30 días
 RUN echo 'server { \
     listen 80; \
     location / { \
