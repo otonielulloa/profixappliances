@@ -138,6 +138,7 @@
         <img
           src="logos.webp"
           alt="Profix Appliances - Appliance repair in Long Island, NY"
+          width="180" height="36"
           class="h-9 w-auto object-contain"
         />
         <div class="leading-tight">
@@ -828,26 +829,28 @@
 
   <!-- Small JS for interactivity -->
   <script>
-    // Dynamic year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dynamic year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Mobile menu toggle
-    (function () {
-      const btn = document.getElementById('mobile-menu-button');
-      const menu = document.getElementById('mobile-menu');
-      const iconMenu = document.getElementById('icon-menu');
-      const iconClose = document.getElementById('icon-close');
+      // Mobile menu toggle
+      (() => {
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconClose = document.getElementById('icon-close');
 
-      if (!btn || !menu) return;
+        if (!btn || !menu) return;
 
-      btn.addEventListener('click', () => {
-        const isHidden = menu.classList.contains('hidden');
-        menu.classList.toggle('hidden', !isHidden);
-        iconMenu.classList.toggle('hidden', !isHidden);
-        iconClose.classList.toggle('hidden', isHidden);
-      });
-    })();
-
+        btn.addEventListener('click', () => {
+          const isHidden = menu.classList.contains('hidden');
+          menu.classList.toggle('hidden', !isHidden);
+          iconMenu.classList.toggle('hidden', !isHidden);
+          iconClose.classList.toggle('hidden', isHidden);
+        });
+      })();
+    });
   </script>
 </body>
 </html>
